@@ -290,10 +290,142 @@ The "Customer Satisfaction Soufflé Chart" integrates latent consumer sentiment 
 <figcaption>Figure 5. Navigating tactile and emotional dimensions in product design.</figcaption>
 </figure>
 </section>
+<section id="profitability">
+    <h2>Profitability: The Parfait Pyramid Framework</h2>
+    <p>
+        In a postmodern economic climate characterized by rapidly evolving consumer expectations, the diversification of revenue streams has emerged as a paramount strategic objective. The "Profitability Parfait Pyramid" visualizes a tiered contribution of income sources, with direct sales comprising the apex of fiscal inflow. These insights underscore the necessity of not merely sustaining high-revenue channels but supplementing them with scalable partnerships and customer-centric workshops to solidify long-term growth.
+    </p>
+    <canvas id="profitabilityChart"></canvas>
+</section>
+
+<section id="social">
+    <h2>Illuminating Engagement: Social Buzz Butterfly Heatmap</h2>
+    <p>
+        Leveraging the principles of social contagion theory, the Social Buzz Butterfly Heatmap exemplifies the asymmetric distribution of engagement across platforms. While Instagram achieves significant visual engagement, Facebook retains dominance in cross-user interaction density. The data suggests that platform-specific targeting not only amplifies ROI but also maximizes sustained consumer-brand affiliation.
+    </p>
+    <canvas id="socialMediaChart"></canvas>
+</section>
+
+<section id="revenue">
+    <h2>Expanding Trajectories: Revenue and Profit Visualization</h2>
+    <p>
+        Through the lens of compound growth models, our "Revenue Butter Scroller" articulates a near-geometric expansion of revenue over a quinquennial period. Interestingly, profits, though incrementally consistent, reveal the systemic challenge of offsetting costs amidst burgeoning revenue streams—highlighting the crucial balance between scale and efficiency in maturing organizations.
+    </p>
+    <canvas id="revenueChart"></canvas>
+</section>
+
+<section id="segmentation">
+    <h2>Market Segmentation Sundae: Consumer Dichotomies</h2>
+    <p>
+        Market segmentation analysis, as depicted in the Sundae visualization, emphasizes the disproportionate influence of millennials—a generational cohort steeped in the ideals of personalization. However, the potential of emerging niche markets, akin to "Culinary Creatives," presents compelling opportunities for market disruption. Penetrating these lesser-represented silos could yield favorable differentiation.
+    </p>
+    <canvas id="segmentationChart"></canvas>
+</section>
+
+<section id="satisfaction">
+    <h2>Dynamics of Delight: Customer Satisfaction Radar</h2>
+    <p>
+        The "Customer Satisfaction Soufflé Chart" integrates latent consumer sentiment with tangible product valuation metrics. The concentric dimensions of packaging, texture, and flavor evidence the complexity of achieving product-market fit. Initiatives aligning these attributes holistically ensure multi-level resonance with target audiences.
+    </p>
+    <canvas id="satisfactionChart"></canvas>
+</section>
+
+
 </main>
 <footer>
 &copy; 2023 Economic Insights <a href="#">Privacy Policy</a> | <a href="#">Contact</a>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Utility function to generate random data
+    function randomData(length, max) {
+        return Array.from({ length }, () => Math.floor(Math.random() * max) + 1);
+    }
+
+    // Profitability Chart
+    const ctxProfitability = document.getElementById("profitabilityChart").getContext("2d");
+    new Chart(ctxProfitability, {
+        type: "bar",
+        data: {
+            labels: ["Direct Sales", "Partnerships", "Subscriptions", "Collaborations", "Workshops"],
+            datasets: [{
+                label: "Revenue ($)",
+                data: randomData(5, 8000),
+                backgroundColor: ["#ffd700", "#ffb347", "#ffccbb", "#f0e68c", "#ffeda0"],
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Social Media Chart
+    const ctxSocialMedia = document.getElementById("socialMediaChart").getContext("2d");
+    new Chart(ctxSocialMedia, {
+        type: "radar",
+        data: {
+            labels: ["Instagram", "Facebook", "Twitter", "TikTok", "Pinterest", "YouTube"],
+            datasets: [{
+                label: "User Engagement",
+                data: randomData(6, 150),
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                borderColor: "rgba(255, 99, 132, 1)",
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Revenue Chart
+    const ctxRevenue = document.getElementById("revenueChart").getContext("2d");
+    new Chart(ctxRevenue, {
+        type: "line",
+        data: {
+            labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+            datasets: [
+                {
+                    label: "Revenue ($k)",
+                    data: randomData(5, 6000),
+                    borderColor: "#4ca1af",
+                    fill: false
+                },
+                {
+                    label: "Profit ($k)",
+                    data: randomData(5, 2000),
+                    borderColor: "#ffcc00",
+                    fill: false
+                }
+            ]
+        },
+        options: { responsive: true }
+    });
+
+    // Segmentation Chart
+    const ctxSegmentation = document.getElementById("segmentationChart").getContext("2d");
+    new Chart(ctxSegmentation, {
+        type: "pie",
+        data: {
+            labels: ["Millennials", "Artisanal Enthusiasts", "Clean Beauty Seekers", "Culinary Creatives"],
+            datasets: [{
+                data: randomData(4, 100),
+                backgroundColor: ["#FFDEAD", "#FFD700", "#FFA07A", "#FF4500"]
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Satisfaction Chart
+    const ctxSatisfaction = document.getElementById("satisfactionChart").getContext("2d");
+    new Chart(ctxSatisfaction, {
+        type: "polarArea",
+        data: {
+            labels: ["Flavor", "Texture", "Value", "Effectiveness", "Packaging"],
+            datasets: [{
+                data: randomData(5, 10),
+                backgroundColor: ["#E0FFFF", "#AFEEEE", "#40E0D0", "#48D1CC", "#20B2AA"]
+            }]
+        },
+        options: { responsive: true }
+    });
+
+</script>
 </body>
 
 </html>
